@@ -1,0 +1,41 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f1f1f1;
+}
+
+form {
+    padding-bottom: 20px;
+}
+
+h4 {
+    padding-bottom: 5px;
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    padding: 5px 0;
+}
+
+#result {
+    width: 50vw;
+}
+
+img {
+    width: 300px;
+}
+
+.checkboxes {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}

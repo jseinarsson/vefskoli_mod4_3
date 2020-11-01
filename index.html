@@ -5,38 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API TESTING</title>
 
-    <style>
-        body {
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        #result {
-            width: 50vw;
-        }
-
-        img {
-            width: 300px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="hello">
         <h1>Where should you visit?</h1>
+        <form>
+            <h4>I want to go to a place in:</h4>
+            <ul class="checkboxes">
+                <li>
+                    <input type="checkbox" id="Africa" name="africa" checked>
+                    <label for="africa">Africa</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="Asia" name="asia" checked>
+                    <label for="asia">Asia</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="Europe" name="europe" checked>
+                    <label for="europe">Europe</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="Americas" name="americas" checked>
+                    <label for="americas">The Americas</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="Oceania" name="oceania" checked>
+                    <label for="oceania">Oceania</label>
+                </li>
+            </ul>
+        </form>
         <button id="dart">Throw a dart at the map</button>
         <hr>
         <div id="result">
         </div>
     </div>
     
-    <script src="js/main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

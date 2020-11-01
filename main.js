@@ -1,30 +1,3 @@
-// const dart = document.getElementById('dart');
-// const result = document.getElementById('result');
-
-// let readmore;
-
-// dart.addEventListener('click', e => {
-//     fetch('https://restcountries.eu/rest/v2/all')
-//     .then (res => {
-//         if (!res.ok) {
-//             throw new Error('Network response error');
-//         }
-//         return res.json();
-//     })
-//     .then(data => {
-//         let country = (data[Math.floor(Math.random() * data.length)].name);
-//         result.innerHTML = (`<h3>You should visit ${country}</h3><button id="readmore">Find out more</button>`);
-//         readmore = document.getElementById('readmore');
-
-//         readmore.addEventListener('click', e => {
-//             console.log(`More info about ${country}`);
-//         });
-//     })
-//     .catch (err => {
-//         console.error(err);
-//     });
-// });
-
 let countries = [];
 
 async function loadCountries() {
@@ -44,7 +17,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.log(`Attn! ${err}`);
     }
 
-    //console.log(countries);
     return countries;
 });
 
@@ -52,11 +24,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 const dart = document.getElementById('dart');
 const result = document.getElementById('result');
+const checkBoxes = document.querySelectorAll('input');
 
 dart.addEventListener('click', e => {
-    let countryObj = randomCountry();
-
-    console.log(countryObj);
+    do {
+        let countryObj = randomCountry();
+        let countrySelection = checkSelection(countryObj.region);
+    } while (!countrySelection);
     
     result.innerHTML = (`<h3>You should visit ${countryObj.name}</h3><button id="readmore">Find out more</button>`);
     readmore = document.getElementById('readmore');
@@ -64,7 +38,23 @@ dart.addEventListener('click', e => {
     readmore.addEventListener('click', e => {
         countryMoreInfo(countryObj);
     });
-})
+});
+
+function checkSelection(randomRegion) {
+    let placesToGo = [];
+
+    for (let i = 0; i < checkBoxes.length; i++) {
+        if (checkBoxes[i].checked) {
+            placesToGo.push(checkBoxes[i].id);
+        }
+    }
+
+    if (placesToGo.indexOf(randomRegion) > -1) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 function randomCountry() {
     return (countries[Math.floor(Math.random() * countries.length)]);
@@ -73,9 +63,9 @@ function randomCountry() {
 function countryMoreInfo(country) {
     result.innerHTML += `<ul>
     <li><img src="${country.flag}" alt="The flag of ${country.name}"></li>
-    <li>Capital: ${country.capital}</li>
-    <li>Region: ${country.subregion}, ${country.region}</li>
-    <li>Population: ${country.population} ${country.demonym}s</li>
+    <li><b>Capital:</b> ${country.capital}</li>
+    <li><b>Region:</b> ${country.subregion}, ${country.region}</li>
+    <li><b>Population:</b> ${country.population} ${country.demonym}s</li>
     </ul>`
 }
 
