@@ -7,3 +7,5 @@ The information is loaded with async/await and the user can get a randomized cou
 I only did super minimal styling on this... so it's a little bit ugly.
 
 I definitely have ideas of how to take this further, by allowing users to add countries to a wishlist, maybe connecting to the Google Maps API and showing the location on a map... and yeah, making it prettier overall. But that has to wait for a better moment in time.
+
+[Check it out](https://jseinarsson.github.io/vefskoli_mod4_3/)
