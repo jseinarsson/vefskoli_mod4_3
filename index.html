@@ -4,12 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API TESTING</title>
+
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        #result {
+            width: 50vw;
+        }
+
+        img {
+            width: 300px;
+        }
+    </style>
 </head>
 <body>
     <div class="hello">
         <h1>Where should you visit?</h1>
         <button id="dart">Throw a dart at the map</button>
-        <div id="result"></div>
+        <hr>
+        <div id="result">
+        </div>
     </div>
     
     <script src="js/main.js"></script>
