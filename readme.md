@@ -2,7 +2,9 @@
 
 I used the [Rest Countries API](https://restcountries.eu) to create a "Where to visit" randomizer, so that people can dream of foreign soil during this pandemic.
 
-The information is loaded with async/await and the user can get a randomized country from the list. Once a country has been loaded, the user can choose to view more information. The user can also filter out world regions they do not want to visit.
+The information is loaded with async/await. If the API fails to load for some reason, the user will get a message in the document that something went wrong and to try again.
+
+Once loaded, the user can get a randomized country from the list. Once a country has been loaded, the user can choose to view more information. The user can also filter out world regions they do not want to visit.
 
 I only did super minimal styling on this... so it's a little bit ugly.
 
